@@ -10,16 +10,17 @@ import (
 	"log"
 	"net"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"kami/ngrok/common"
-
 	"github.com/gdamore/tcell/v2"
 	"golang.org/x/term"
+
+	"kami/ngrok/common"
 )
 
 const (
@@ -219,7 +220,7 @@ func main() {
 	}
 	localPort := *portFlag
 
-	args := flag.Args()
+	args := normalizedArgs(flag.Args())
 	switch len(args) {
 	case 0:
 		// use flag defaults
@@ -597,6 +598,24 @@ func (c *client) closeUI() {
 		c.tui.Close()
 		c.tui = nil
 	}
+}
+
+func normalizedArgs(input []string) []string {
+	filtered := make([]string, 0, len(input))
+	for _, arg := range input {
+		if arg == "" {
+			continue
+		}
+		if arg == os.Args[0] || strings.HasSuffix(arg, "/"+filepath.Base(os.Args[0])) {
+			continue
+		}
+		if strings.Contains(arg, "/") {
+			// likely a path accidentally forwarded via shell wrapper
+			continue
+		}
+		filtered = append(filtered, arg)
+	}
+	return filtered
 }
 
 func formatRate(delta uint64, interval time.Duration) string {
