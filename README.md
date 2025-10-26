@@ -26,14 +26,16 @@ Tải bản tương ứng với hệ điều hành của bạn:
 ---
 
 ## ⚙️ Cách sử dụng
-###  Niếu port là udp ví dụ như game minecraft  thì thêm --proto udp nhé 
+###  Niếu port là udp ví dụ như game minecraft PE  thì thêm --proto udp nhé 
+# bắt buộc thêm flag --host 127.0.0.1 đối với minecraft nhé không là ko jon được mình đã tets 
 
 
 ví dụ:
 
 ```
-./kami-tunnel --proto udp 19132
+./kami-tunnel --proto udp --host 127.0.0.1 19132 
 trong đó 19132 là port ngốc udp là protoco 
+
 ```
 
 ---
