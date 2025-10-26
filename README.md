@@ -3,6 +3,8 @@
 
 #  Kami Tunnel TCP/udp NO LIMIT TRAFFIC 
 
+#  chú ý : vui lòng tắt rate limit in 127.0.0.1 nhé 
+
 Kami Tunnel là công cụ tạo **đường hầm (tunnel)** giúp bạn **public port nội bộ ra Internet** nhanh chóng, an toàn và đơn giản — tương tự ngrok nhưng gọn nhẹ hơn.
 
 ---
