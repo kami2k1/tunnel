@@ -1,7 +1,7 @@
 
 ---
 
-#  Kami Tunnel TCP NO LIMIT TRAFFIC 
+#  Kami Tunnel TCP/udp NO LIMIT TRAFFIC 
 
 Kami Tunnel là công cụ tạo **đường hầm (tunnel)** giúp bạn **public port nội bộ ra Internet** nhanh chóng, an toàn và đơn giản — tương tự ngrok nhưng gọn nhẹ hơn.
 
@@ -24,7 +24,17 @@ Tải bản tương ứng với hệ điều hành của bạn:
 ---
 
 ## ⚙️ Cách sử dụng
+###  Niếu port là udp ví dụ như game minecraft  thì thêm --proto udp nhé 
 
+
+ví dụ:
+
+```
+./kami-tunnel --proto udp 19132
+trong đó 19132 là port ngốc udp là protoco 
+```
+
+---
 ### 🐧 Linux / macOS
 
 Giải nén và chạy:

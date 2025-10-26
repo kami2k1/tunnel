@@ -7,7 +7,7 @@ import (
 	"io"
 )
 
-const Version = "1.0.1"
+const Version = "1.2.0"
 
 // Message is the control-plane payload exchanged between tunnel peers.
 type Message struct {
@@ -19,6 +19,9 @@ type Message struct {
 	ID         string `json:"id,omitempty"`
 	Error      string `json:"error,omitempty"`
 	Version    string `json:"version,omitempty"`
+	Protocol   string `json:"protocol,omitempty"`
+	RemoteAddr string `json:"remote_addr,omitempty"`
+	Payload    string `json:"payload,omitempty"`
 }
 
 // NewEncoder returns a JSON encoder with HTML escaping disabled.
