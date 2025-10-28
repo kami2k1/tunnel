@@ -2,6 +2,7 @@
 ---
 
 #  Kami Tunnel TCP/udp NO LIMIT TRAFFIC 
+## nâng cấp zero copy & kcpu udp tunnel cần src hãy mở issues
 
 #  chú ý : vui lòng tắt rate limit in 127.0.0.1 nhé 
 
